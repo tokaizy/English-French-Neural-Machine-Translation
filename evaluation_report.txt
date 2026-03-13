@@ -1,0 +1,76 @@
+============================================================
+TRANSLATION MODEL EVALUATION REPORT
+============================================================
+
+Model Configuration:
+------------------------------
+  embedding_dim: 256
+  hidden_size: 512
+  num_layers: 2
+  dropout: 0.3
+  batch_size: 64
+  learning_rate: 0.001
+  teacher_forcing_ratio: 0.5
+  max_length: 50
+  max_vocab_size: 10000
+
+BLEU Scores (on test set):
+------------------------------
+  BLEU-1: 73.86
+  BLEU-2: 64.45
+  BLEU-3: 56.90
+  BLEU-4: 50.81
+  Evaluated on 990 samples
+
+Translation Examples:
+------------------------------
+
+Example 1:
+  Source: a blond - haired baby is sitting on the floor playing with toys while looking at a black and white cat .
+  Reference: un bébé aux cheveux blonds est assis par terre et joue avec des jouets tout en regardant un chat noir et blanc .
+  Prediction: un bébé aux cheveux blonds est assis par terre et joue avec des jouets tout en regardant un chat noir et blanc .
+  BLEU Score: 100.00
+
+Example 2:
+  Source: two men are sitting in a canoe in the middle of a lake , watching the sunset in the background .
+  Reference: deux hommes sont assis dans un canoë au milieu d’ un lac et regardent le coucher de soleil en arrière-plan .
+  Prediction: deux hommes sont assis dans un canoë au milieu d' un lac , regardent le coucher du soleil en arrière-plan .
+  BLEU Score: 59.20
+
+Example 3:
+  Source: four young asian boys hold bowls and chopsticks as they stand around a barbecue .
+  Reference: quatre jeunes garçons asiatiques tiennent des bols et des baguettes autour d’ un barbecue .
+  Prediction: quatre jeunes garçons asiatiques tiennent des ballons et des baguettes alors qu' ils se tiennent autour d' un autel .
+  BLEU Score: 32.26
+
+Example 4:
+  Source: there is six adults in front of a little kitchen some eating and others walking around .
+  Reference: il y a six adultes devant une petite cuisine , certains mangeant et d' autres se promenant .
+  Prediction: il y a six adultes devant une petite cuisine et mangeant des autres et d' autres personnes .
+  BLEU Score: 55.00
+
+Example 5:
+  Source: an asian man is cooking several meat on a stick .
+  Reference: un asiatique fait cuire plusieurs viandes sur un bâton .
+  Prediction: un homme asiatique achète plusieurs plusieurs sur un bâton .
+  BLEU Score: 30.21
+
+Error Analysis:
+------------------------------
+Error Type Distribution:
+  empty_translation: 0.0%
+  too_short: 0.0%
+  too_long: 0.0%
+  repeated_words: 3.5%
+  unk_tokens: 10.0%
+  perfect_match: 4.5%
+
+Translation Length Statistics:
+  Average length ratio: 0.97
+  Std dev length ratio: 0.09
+
+BLEU Score Statistics:
+  Average BLEU: 47.43
+  Std dev BLEU: 25.38
+
+============================================================
