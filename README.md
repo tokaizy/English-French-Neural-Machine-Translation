@@ -1,4 +1,4 @@
-# English--French Neural Machine Translation (Seq2Seq LSTM)
+# English--French Neural Machine Translation with Attention (Seq2Seq LSTM)
 
 Neural Machine Translation system that translates **English sentences
 into French** using a **Sequence-to-Sequence Encoder--Decoder LSTM
@@ -107,7 +107,7 @@ Sentences typically contain **10--15 words** describing everyday scenes.
 The optimized training configuration significantly improved translation
 quality.
 
-  Metric   Version 1   Version 2
+  Metric   Version 1   Version 2(with Attention)
   -------- ----------- -----------
   BLEU-1   38.73       73.86
   BLEU-2   23.33       64.45
@@ -131,106 +131,6 @@ Output (French)
 
 ------------------------------------------------------------------------
 
-## Installation
-
-Clone the repository:
-
-``` bash
-git clone https://github.com/yourusername/nmt-seq2seq-lstm.git
-cd nmt-seq2seq-lstm
-```
-
-Install dependencies:
-
-``` bash
-pip install torch spacy torchtext sacrebleu
-```
-
-Download spaCy language models:
-
-``` bash
-python -m spacy download en_core_web_sm
-python -m spacy download fr_core_news_sm
-```
-
-------------------------------------------------------------------------
-
-## Training
-
-Run:
-
-``` bash
-python train.py
-```
-
-This will:
-
--   preprocess the dataset
--   build vocabularies
--   train the model
--   save the best checkpoint
-
-------------------------------------------------------------------------
-
-## Inference
-
-Run:
-
-``` bash
-python translate.py
-```
-
-Example:
-
-    Input: a child is playing with a toy
-    Output: un enfant joue avec un jouet
-
-------------------------------------------------------------------------
-
-## Project Structure
-
-    nmt-seq2seq-lstm
-    │
-    ├── data/
-    │   └── Multi30k dataset
-    │
-    ├── models/
-    │   ├── encoder.py
-    │   ├── decoder.py
-    │   └── seq2seq.py
-    │
-    ├── train.py
-    ├── evaluate.py
-    ├── translate.py
-    │
-    ├── utils/
-    │   ├── dataset.py
-    │   ├── vocabulary.py
-    │   └── bleu.py
-    │
-    └── README.md
-
-------------------------------------------------------------------------
-
-## Limitations
-
--   Fixed context vector creates **information bottleneck**
--   No attention mechanism for word alignment
--   Limited vocabulary size (10k tokens)
-
-------------------------------------------------------------------------
-
-## Future Improvements
-
-Potential improvements:
-
--   Add **Attention mechanism**
--   Implement **Beam Search decoding**
--   Use **Byte Pair Encoding (BPE)** for subword tokenization
--   Upgrade to **Transformer architecture**
-
-------------------------------------------------------------------------
-
 ## Tech Stack
 
 -   Python
@@ -240,8 +140,3 @@ Potential improvements:
 -   sacreBLEU
 
 ------------------------------------------------------------------------
-
-## Author
-
-AI / Machine Learning student focusing on **NLP, deep learning, and AI
-systems**.
